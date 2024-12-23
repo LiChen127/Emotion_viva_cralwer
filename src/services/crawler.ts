@@ -11,9 +11,7 @@ export class CrawlerService {
   private mongoService: MongoService;
   private crawlQueue: Queue.Queue;
   private readonly cookies: string[] = [
-    // 添加一些有效的 cookie
     '7d0c05cfbd949a8750e2b03c4de48209|1734706167|1734706167',
-    // 可以添加多个不同的 cookie
   ];
 
   private readonly headers = {
@@ -419,5 +417,10 @@ export class CrawlerService {
     } catch (error) {
       logger.error('测试文章保存失败:', error);
     }
+  }
+
+  async stop() {
+    await this.crawlQueue.close();
+    logger.info('爬虫队列已关闭');
   }
 } 

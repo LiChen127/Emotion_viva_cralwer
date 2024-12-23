@@ -15,6 +15,15 @@ app.get('/api/crawler/start', async (req, res) => {
   }
 });
 
+app.get('/api/crawler/stop', async (req, res) => {
+  try {
+    await crawler.stop();
+    res.json({ status: 'success', message: 'Crawler stopped' });
+  } catch (error) {
+    res.status(500).json({ status: 'error', message: (error as Error).message });
+  }
+});
+
 app.get('/api/test/mongodb', async (req, res) => {
   try {
     await crawler.testMongoDB();
