@@ -1,0 +1,28 @@
+{
+  "name": "emotion-viva-crawler",
+  "version": "1.0.0",
+  "description": "Crawler for jiandanxinli.com",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev src/app.ts"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "bull": "^4.12.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/bull": "^4.10.0",
+    "@types/cheerio": "^0.22.35",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}
